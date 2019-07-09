@@ -180,17 +180,13 @@ const getPublicIPv4 = async (cb) => {
   // dig +short myip.opendns.com @resolver1.opendns.com
   // httpGet doesn't support https yet...
   var publicIpServices = [
-    { url: 'https://api.ipify.org' },
-    { url: 'https://ipinfo.io/ip' },
-    { url: 'https://ipecho.net/plain' },
-    //{ url: 'http://api.ipify.org' },
-    //{ url: 'http://ipinfo.io/ip' },
-    //{ url: 'http://ipecho.net/plain' },
-    { url: 'http://ifconfig.me/ip' },
-    { url: 'http://ipv4.icanhazip.com' },
-    { url: 'http://v4.ident.me' },
-    { url: 'http://checkip.amazonaws.com' },
-    //{ url: 'https://checkip.dyndns.org', handler: dynDNSHandler },
+    'https://api.ipify.org',
+    'https://ipinfo.io/ip',
+    'https://ipecho.net/plain',
+    'http://ifconfig.me/ip',
+    'http://ipv4.icanhazip.com',
+    'http://v4.ident.me',
+    'http://checkip.amazonaws.com',
   ]
 
   const getIP = () => {
