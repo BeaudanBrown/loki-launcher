@@ -190,6 +190,9 @@ function launcherStorageServer(config, args, cb) {
   if (config.storage.force_start) {
     optionals.push('--force-start')
   }
+  if (config.blockchain.network == "test") {
+    optionals.push('--testnet')
+  }
   console.log('STORAGE: Launching', config.storage.binary_path, [config.storage.ip, config.storage.port, ...optionals].join(' '))
   // ip and port must be first
   storageServer = spawn(config.storage.binary_path, [config.storage.ip, config.storage.port, ...optionals])
